@@ -7,6 +7,15 @@
   --accent-color-transparent: rgba(50, 49, 45, 0.4);
 }
 
-.theme-light .recElips {
+.theme-light .decorative__element {
   display: none;
+}
+
+@media (min-width: 1024px) {
+  .theme-light .header__title {
+    text-shadow: 4px 4px 0 #FF0070;
+  }
+  .theme-light .footer__title {
+    text-shadow: 4px 4px 0 #FF0070;
+  }
 }

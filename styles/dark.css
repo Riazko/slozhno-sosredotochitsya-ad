@@ -7,6 +7,6 @@
   --accent-color-transparent: rgba(255, 0, 112, 0.4);
 }
 
-.theme-dark .recElips {
+.theme-dark .decorative__element {
   display: flex;
 }
