@@ -1,10 +1,10 @@
 .page {
   margin: 0 auto;
-  font-family: var(--font-family);
+  font-family: var(--font, monospace);
   font-size: var(--font-size);
   font-weight: 400;
   line-height: 23.4px;
-  background-image: var(--bg-image);
+  background-image: var(--backgroung-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -14,6 +14,7 @@
 
 .header {
   min-block-size: 100vh;
+  height: 768px;
   padding: 20px;
   display: grid;
   position: relative;
@@ -30,7 +31,7 @@
 
 .header__theme-menu-button {
   padding: 0 13px;
-  color: var(--accent-color);
+  color: var(--btn-color);
   text-align: center;
   border: none;
   background: transparent;
@@ -40,7 +41,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--btn-color);
 }
 
 .header__theme-menu-button:focus {
@@ -48,11 +49,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--btn-color);
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color-transparent);
+  border: 1px solid rgba(255, 0, 112, 0.40);
   cursor: pointer;
 }
 
@@ -66,7 +67,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--accent-color);
+  color: var(--btn-color);
   text-align: center;
   padding-right: 8px;
   text-transform: uppercase;
@@ -91,8 +92,8 @@
   top: 0;
   right: 0;
   content: "";
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--btn-color);
+  border-right: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
   margin: 20px;
@@ -103,8 +104,8 @@
   bottom: 0;
   left: 0;
   content: "";
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--btn-color);
+  border-left: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
   margin: 20px;
@@ -126,7 +127,7 @@
   background-color: var(--accent-color);
   font-size: var(--font-size);
   line-height: 23.4px;
-  color: var(--text-color);
+  color: var(--sub-text-color);
 }
 
 .header__text {
@@ -139,9 +140,9 @@
 /*Дизайн заголовков всех секций*/
 
 .question__section-title {
-  color: var(--accent-color);
+  color: var(--btn-color);
   font-weight: 700;
-  line-height: 23.4px;
+  line-height: 23.4px; /* 130% */
   font-size: var(--font-size);
 }
 
@@ -204,7 +205,6 @@
   gap: 20px;
   padding-block-start: 20px;
 }
-
 .question__section-title-two {
   max-inline-size: 315px;
 }
@@ -284,25 +284,31 @@
 /*Подвал*/
 
 .footer {
-  min-block-size: 100vh;
+
   padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 768px;
 }
 
 .footer__title {
   text-shadow: 4px 4px 0 var(--accent-color);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   color: var(--title-color);
   font-weight: 700;
   line-height: 82.5%;
+  
 }
 
 /*Медиа запрос под 768px*/
 
 @media (max-width:768px) {
+  .header {
+    height: 1024px;
+  }
+
   .header__theme-menu {
     display: flex;
     justify-content: flex-end;
@@ -321,10 +327,11 @@
   }
 
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   }
 
   .question__section__one {
+
     grid-template-columns: 33% 67%;
     gap: 20px;
     padding-inline-end:20px;
@@ -348,6 +355,7 @@
   }  
  
   .footer {
+    height: 1024px;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -357,74 +365,76 @@
 /*Медиа запрос под 375px*/
 
 @media (max-width:560px) {
-  .header {
-    padding: 10px;
-  }
+ .header {
+  padding: 10px;
+  height: 668px;
+}
 
-  .header__title {
-    margin-left: 0px;
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  }
+.header__title {
+  margin-left: 0px;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+}
 
-  .header__text {
-    max-inline-size: 355px;
-    max-block-size: 117px;
-  }  
+.header__text {
+  max-inline-size: 355px;
+  max-block-size: 117px;
+}  
 
-  .question__section__one {
-    margin: 0px 10px;
-    padding: 40px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+.question__section__one {
+  margin: 0px 10px;
+  padding: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-  .question__section-two {
-    margin: 0 10px;
-    padding-block-start: 50px;
-    padding-inline-end: 0 ;
-    padding-block-end: 50px;
-  }
+.question__section-two {
+  margin: 0 10px;
+  padding-block-start: 50px;
+  padding-inline-end: 0 ;
+  padding-block-end: 50px;
+}
 
-  .question__section-title-two {
-    min-inline-size: 355px;
-  }
+.question__section-title-two {
+  min-inline-size: 355px;
+}
 
-  .question__section-answer-two-container {
-    display: flex;
-    flex-direction: column;
-  }
+.question__section-answer-two-container {
+  display: flex;
+  flex-direction: column;
+}
 
-  .question__section__fhree {
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-block-end: 50px;
-  }
+.question__section__fhree {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block-end: 50px;
+}
 
-  .question__section__image {
-    padding: 0 0 40px 0;
-  }
+.question__section__image {
+  padding: 0 0 40px 0;
+}
 
-  .question__section-title-image {
-    margin: 0 10px 10px 10px;
-  }
+.question__section-title-image {
+  margin: 0 10px 10px 10px;
+}
 
-  .question__section__image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 10px;
-  }
+.question__section__image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 10px;
+}
 
-  .footer {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  } 
+.footer {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  height: 668px;
+} 
 
-  .footer__title {
+.footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
