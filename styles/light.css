@@ -1,17 +1,17 @@
 :root.theme-light {
   --title-color: #FFC2E6;
   --text-color: #353430;
-  --accent-text-color: #353430;
+  --sub-text-color: #353430;
   --accent-color: #ff8dcb;
-  --button-color: #353430;
-  --background-image: url(../images/cover-image-light.png);
+  --btn-color:#353430;
+  --backgroung-image: url(../images/cover-image-light.png);
 }
 
-.theme-light .rec-label {
+.theme-light .decorative__element {
   display: none;
 }
 
-.theme-light .theme-switcher__btn:hover {
+.theme-light .header__theme-menu-button:hover {
   border: 1px solid rgba(50, 49, 45, 0.40);
 }
 
@@ -19,16 +19,16 @@
   :root {
     --title-color: #FFC2E6;
     --text-color: #353430;
-    --accent-text-color: #353430;
+    --sub-text-color: #353430;
     --accent-color: #ff8dcb;
-    --button-color: #353430;
-    --background-image: url(../images/cover-image-light.png);
+    --btn-color:#353430;
+    --backgroung-image: url(../images/cover-image-light.png);
   }
-  .rec-label {
+  .decorative__element {
     display: none;
   }
   
-  .theme-switcher__btn:hover {
+  .header__theme-menu-button:hover {
     border: 1px solid rgba(50, 49, 45, 0.40);
   }
 }  
