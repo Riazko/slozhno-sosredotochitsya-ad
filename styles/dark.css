@@ -2,9 +2,11 @@
   --main-title-color: #DB00FF;
   --main-text-color: #F1B2CE;
   --accent-text-color: #000028;
-  --accent-color: #ff0070;
-  --button-color: #ff0070;
+  --accent-color: #FF0070;
+  --button-color: #FF0070;
   --background-image: url(../images/cover-image-dark.png);
+  --section-title-color: #FF0070;
+  --decor-color: #FF0070;
 }
 
 .theme-dark .decorative__element {
